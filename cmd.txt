@@ -1,0 +1,29 @@
+Membuat Module
+~ go mod init github.com/ryukzgans/belajar-golang (repository)
+
+Membuat Version (Release Tags)
+~ git tag v1.0.0
+~ git push origin v1.0.0
+
+Menambah Depedency 
+~ go get github.com/ryukzgans/belajar-golang (repository)
+>> akan menambah "require github.com/ryukzgans/belajar-golang v1.0.0" ke dalam go.mod 
+
+Upgrade Module
+~ git tag v1.0.2
+~ git push origin v1.0.2
+
+Upgrade Depedency
+>> caranya dengan mengedit tag version pada go.mod menjadi version terupdate nya, contoh
+- require github.com/ryukzgans/belajar-golang v1.0.0 >> require github.com/ryukzgans/belajar-golang v1.0.2
+>> kemudian hanya perlu ketikkan "go get" untuk mengupdate module
+~ go get
+
+Major Update
+>> menambahkan v2/v3/v4 dst, pada akhir bagian module di go.mod
+- module github.com/ryukzgans/belajar-golang/v2 (go.mod)
+>> kemudian kita hanya perlu git push go.mod beserta file2 lainnya, kemudian menambah tag baru dengan v2 atau keatas
+~ git tag v2.0.0
+~ git push origin v2.0.0
+>> bagaimana dengan org yg import module kita ? tinggal hapus require module, kemudian go get kembali dengan versi terbaru
+~ go get github.com/ryukzgans/belajar-golang/v2 (beserta dengan versi v2, yg dmn adalah release tag v2.0.0) 
