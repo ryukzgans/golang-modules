@@ -1,4 +1,4 @@
-package belajar_golang
+package golangmodules
 
 import "strconv"
 
